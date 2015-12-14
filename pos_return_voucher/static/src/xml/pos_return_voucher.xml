@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © 2015 FactorLibre - Ismael Calvo <ismael.calvo@factorlibre.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<templates id="template" xml:space="preserve">
+
+    <t t-name="VoucherTicket">
+        <div class="pos-sale-ticket">
+
+            <div class="pos-center-align">
+                <t t-esc="new Date().toString(Date.CultureInfo.formatPatterns.shortDate + ' ' +
+                Date.CultureInfo.formatPatterns.longTime)"/>
+            </div>
+
+            <br />
+            <t t-esc="widget.pos.company.name"/><br />
+            Phone: <t t-esc="widget.pos.company.phone || ''"/><br />
+            User: <t t-esc="widget.pos.cashier ? widget.pos.cashier.name : widget.pos.user.name"/><br />
+            Shop: <t t-esc="widget.pos.shop.name"/><br />
+            <br />
+            <t t-if="widget.pos.config.receipt_header">
+                <div style='text-align:center'>
+                    <t t-esc="widget.pos.config.receipt_header" />
+                </div>
+                <br />
+            </t>
+
+            <div class="pos-center-align">
+                <h2>Return Voucher</h2>
+            </div>
+
+            <figure class="voucher-barcode">
+                <img t-att-src="barcode_src"/><br/>
+                <figcaption><t t-esc="voucher.name"/></figcaption>
+            </figure>
+
+            <t t-if="widget.pos.config.receipt_footer">
+                <br />
+                <div style='text-align:center'>
+                    <t t-esc="widget.pos.config.receipt_footer" />
+                </div>
+            </t>
+        </div>
+    </t>
+
+    <t t-name="VoucherPopupWidget">
+        <div class="modal-dialog">
+            <div class="popup popup-voucher">
+                <header>
+                    <h1 class="message"><t t-esc=" widget.message || 'Select' " /></h1>
+                    <!-- <p class="order-info">Order Ref: <span class="order-ref"></span></p> -->
+                    <span class="searchbox">
+                        <input placeholder="Search Voucher"/>
+                    </span>
+                </header>
+                <div class="scroll">
+                    <table class="product-list">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Amount</th>
+                                <th>Due Date</th>
+                                <th>Partner</th>
+                            </tr>
+                        </thead>
+                        <tbody class="voucher-list-contents"></tbody>
+                    </table>
+                </div>
+                <div class="footer">
+                    <div class="button cancel">Cancel</div>
+                    <!-- <div class="button confirm">Select</div> -->
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="LoadVoucherLine">
+        <tr class="voucher-line" t-att-data-voucher-id="voucher.id">
+            <td><t t-esc="voucher.name"/></td>
+            <td><t t-esc="widget.format_currency(voucher.amount)"/></td>
+            <td><t t-esc="voucher.due_date"/></td>
+            <td><t t-esc="voucher.partner_id[1]"/></td>
+        </tr>
+    </t>
+
+</templates>
