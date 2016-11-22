@@ -77,7 +77,7 @@ class PosOrder(models.Model):
         return {
             'id': order.id,
             'name': order.pos_reference,
-            'partner_id': self.partner_id.id,
+            'partner_id': order.partner_id.id,
             'orderlines': orderlines
         }
 
