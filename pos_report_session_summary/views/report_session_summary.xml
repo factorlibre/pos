@@ -55,60 +55,54 @@
                                     >
                                     <strong>Currency</strong>
                                 </th>
-                                <th class="text-right">
-                                    <strong>Status</strong>
-                                </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr t-foreach="o.statement_ids" t-as="statement">
-                                <td><span t-field="statement.name" /></td>
-                                <td><span t-field="statement.journal_id" /></td>
+                            <tr t-foreach="o.statement_line_ids" t-as="statement_line">
+                                <td><span t-field="statement_line.statement_id.name" /></td>
+                                <td><span t-field="statement_line.statement_id.journal_id" /></td>
                                 <td class="text-right">
                                     <span
-                                            t-field="statement.balance_start"
-                                            t-field-options='{"widget": "monetary", "display_currency": "statement.currency_id"}'
+                                            t-field="statement_line.statement_id.balance_start"
+                                            t-field-options='{"widget": "monetary", "display_currency": "statement_line.statement_id.currency_id"}'
                                         />
                                 </td>
                                 <td class="text-right">
                                     <span
-                                            t-field="statement.total_entry_encoding"
-                                            t-field-options='{"widget": "monetary", "display_currency": "statement.currency_id"}'
+                                            t-field="o.cash_register_total_entry_encoding"
+                                            t-field-options='{"widget": "monetary", "display_currency": "statement_line.statement_id.currency_id"}'
                                         />
                                 </td>
                                 <td class="text-right">
                                     <span
-                                            t-field="statement.balance_end_real"
-                                            t-field-options='{"widget": "monetary", "display_currency": "statement.currency_id"}'
+                                            t-field="statement_line.statement_id.balance_end_real"
+                                            t-field-options='{"widget": "monetary", "display_currency": "statement_line.statement_id.currency_id"}'
                                         />
                                 </td>
                                 <td class="text-right">
                                     <span
-                                            t-field="statement.difference"
-                                            t-field-options='{"widget": "monetary", "display_currency": "statement.currency_id"}'
+                                            t-field="o.cash_register_difference"
+                                            t-field-options='{"widget": "monetary", "display_currency": "statement_line.statement_id.currency_id"}'
                                         />
                                 </td>
                                 <td
                                         class="text-right"
                                         groups="base.group_multi_currency"
                                     >
-                                    <span t-field="statement.currency_id" />
+                                    <span t-field="statement_line.statement_id.currency_id" />
                                 </td>
-                                <td class="text-right"><span
-                                            t-field="statement.state"
-                                        /></td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <t t-foreach="o.statement_ids" t-as="statement">
-                        <h4 t-if="statement.line_ids">Statement Details: <span
-                                    t-esc="statement.name"
+                    <t t-foreach="o.statement_line_ids" t-as="statement_line">
+                        <h4 t-if="statement_line">Statement Details: <span
+                                    t-esc="statement_line.statement_id.name"
                                 /></h4>
 
                         <table
                                 class="table table-sm o_main_table"
-                                t-if="statement.line_ids"
+                                t-if="statement_line"
                             >
                             <thead>
                                 <tr>
@@ -121,7 +115,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr t-foreach="statement.line_ids" t-as="line">
+                                <tr t-foreach="statement_line" t-as="line">
                                     <td><span
                                                 t-if="'date' in line"
                                                 t-field="line.date"
@@ -145,13 +139,13 @@
                                     <td class="text-right">
                                         <span
                                                 t-field="line.amount"
-                                                t-field-options='{"widget": "monetary", "display_currency": "statement.currency_id"}'
+                                                t-field-options='{"widget": "monetary", "display_currency": "statement_line.statement_id.currency_id"}'
                                             />
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                    </t>
+                    </t> 
                 </div>
             </t>
         </t>
