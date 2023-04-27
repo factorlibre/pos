@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- © 2023 FactorLibre - Juan Carlos Bonilla <juancarlos.bonilla@factorlibre.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<templates id="template" xml:space="preserve">
+
+    <t
+        t-name="OrderReceiptRedeemPaymentInherit"
+        t-inherit="point_of_sale.OrderReceipt"
+        t-inherit-mode="extension"
+        owl="1"
+    >
+        <xpath expr="//div[@id='payment_summary']/span[1]" position="inside">
+            <span class="payment-code" t-if="line.code"><t
+                    t-out="' [' + line.code + ']'"
+                /></span>
+        </xpath>
+    </t>
+
+</templates>
