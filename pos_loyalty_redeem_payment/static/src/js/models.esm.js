@@ -1,29 +1,19 @@
 /** @odoo-module **/
-/** © 2023 - FactorLibre - Juan Carlos Bonilla <juancarlos.bonilla@factorlibre.com>
-    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). **/
 
 import {Order, Payment} from "point_of_sale.models";
 import Registries from "point_of_sale.Registries";
 
 export const RedeemPaymentOrder = (OriginalOrder) =>
     class extends OriginalOrder {
-        has_redeemption_code() {
-            return this.paymentlines.some((line) => line.payment_method.redeem_code);
-        }
-        is_paid_with_coupon() {
-            let res = super.is_paid_with_coupon();
-            if (!res)
-                res = this.paymentlines.some((pl) => pl.payment_method.redeem_code);
-            return res;
-        }
-
-        has_redeem_lines() {
-            return this.paymentlines.some((pl) => pl.payment_method.redeem_code);
+        has_redeem_payment_lines() {
+            return this.paymentlines.some(
+                (pl) => pl.payment_method.used_for_loyalty_program
+            );
         }
 
         wait_for_push_order() {
             let result = super.wait_for_push_order(...arguments);
-            result = Boolean(result || this.has_redeem_lines());
+            result = Boolean(result || this.has_redeem_payment_lines());
             return result;
         }
     };
@@ -46,14 +36,6 @@ export const PosVoucherRedeemPayment = (OriginalPayment) =>
         init_from_JSON(json) {
             super.init_from_JSON(...arguments);
             this.coupon_data = json.coupon_data;
-        }
-
-        export_for_printing() {
-            const result = super.export_for_printing();
-            result.coupon_data = this.coupon_data;
-            result.code = this.coupon_data ? this.coupon_data.code.trim() : result.code;
-
-            return result;
         }
     };
 

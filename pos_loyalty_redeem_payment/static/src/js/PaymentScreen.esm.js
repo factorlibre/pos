@@ -1,34 +1,14 @@
 /** @odoo-module **/
-/** © 2023 - FactorLibre - Juan Carlos Bonilla <juancarlos.bonilla@factorlibre.com>
-    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). **/
 
 import NumberBuffer from "point_of_sale.NumberBuffer";
 import PaymentScreen from "point_of_sale.PaymentScreen";
 import Registries from "point_of_sale.Registries";
+import session from "web.session";
 
 export const CouponPosPaymentScreen = (OriginalPaymentScreen) =>
     class extends OriginalPaymentScreen {
-        setup() {
-            super.setup();
-            this.payment_methods_from_config = this.env.pos.payment_methods.filter(
-                this.filterPaymentMethods,
-                this
-            );
-        }
-
-        filterPaymentMethods(method) {
-            // If order amount is positive, we don't want to show paymentMethods with 'is_voucher' to true.
-            // However if paymentMethod allows to redeem amount, we should display it.
-            if (this.currentOrder.get_total_with_tax() > 0) {
-                return (
-                    this.env.pos.config.payment_method_ids.includes(method.id) &&
-                    (!method.is_voucher || method.redeem_code)
-                );
-            }
-            return this.env.pos.config.payment_method_ids.includes(method.id);
-        }
-
         _updateSelectedPaymentline() {
+            // Disallow payment line editing
             if (this.selectedPaymentLine && this.selectedPaymentLine.coupon_data)
                 return;
             super._updateSelectedPaymentline();
@@ -71,32 +51,20 @@ export const CouponPosPaymentScreen = (OriginalPaymentScreen) =>
             if (this.codeIsDuplicated(pending_orders, code)) {
                 this.showNotification(
                     this.env._t(
-                        "That coupon code has already been scanned and activated. Please, process pending orders.",
-                        5000
-                    )
+                        "That coupon code has already been scanned and activated. Please, process pending orders."
+                    ),
+                    5000
                 );
-                return 0;
+                return false;
             }
-            return 1;
-        }
-
-        getPlaceholder(paymentName) {
-            const MAPPER = {
-                vale: this.env._t("Voucher"),
-                regalo: this.env._t("Gift Card"),
-            };
-            const result = ["vale", "regalo"].filter((str) =>
-                paymentName.includes(str)
-            );
-            return result ? MAPPER[result[0]] : this.env._t("Voucher or Gift Card");
+            return true;
         }
 
         async insertAndValidateCode(paymentMethod) {
-            const voucher_type = this.getPlaceholder(paymentMethod.name.toLowerCase());
             const {confirmed, payload: code} = await this.showPopup("TextInputPopup", {
                 title: this.env._t("Enter Code"),
                 startingValue: "",
-                placeholder: voucher_type,
+                placeholder: this.env._t("Gift Card"),
             });
             if (!confirmed || !this.hasBeenScanned(code)) return 0;
 
@@ -148,7 +116,11 @@ export const CouponPosPaymentScreen = (OriginalPaymentScreen) =>
         async applyProgramAsPaymentMethod(paymentMethod) {
             const {payload, code} = await this.insertAndValidateCode(paymentMethod);
             if (payload) {
-                const amount = await this.insertAmountToRedeem(payload.points);
+                const maxCouponValue = Math.min(
+                    this.currentOrder.get_total_with_tax(),
+                    payload.points
+                );
+                const amount = await this.insertAmountToRedeem(maxCouponValue);
                 if (amount) {
                     const newPaymentLine =
                         this.currentOrder.add_paymentline(paymentMethod);
@@ -175,12 +147,36 @@ export const CouponPosPaymentScreen = (OriginalPaymentScreen) =>
             if (
                 order.get_due() &&
                 order.get_subtotal() > 0 &&
-                paymentMethod.redeem_code
+                paymentMethod.used_for_loyalty_program
             ) {
                 this.applyProgramAsPaymentMethod(paymentMethod);
                 return;
             }
             super.addNewPaymentLine(...arguments);
+        }
+
+        async _postPushOrderResolve(order, order_server_ids) {
+            if (order.has_redeem_payment_lines()) {
+                const payload = await this.rpc({
+                    model: "pos.order",
+                    method: "get_loy_card_reports_from_order",
+                    args: [order_server_ids],
+                    kwargs: {context: session.user_context},
+                });
+                if (payload.coupon_report) {
+                    for (const report_entry of Object.entries(payload.coupon_report)) {
+                        await this.env.legacyActionManager.do_action(report_entry[0], {
+                            additional_context: {
+                                active_ids: report_entry[1],
+                            },
+                        });
+                    }
+                }
+                if (payload.new_coupon_info) {
+                    order.new_coupon_info = payload.new_coupon_info;
+                }
+            }
+            return super._postPushOrderResolve(...arguments);
         }
     };
 

@@ -1,7 +1,3 @@
-# © 2023 FactorLibre - Juan Carlos Bonilla <juancarlos.bonilla@factorlibre.com>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
-
 from odoo.tests import tagged
 
 from odoo.addons.point_of_sale.tests.test_frontend import TestPointOfSaleHttpCommon
@@ -107,16 +103,5 @@ class TestUi(TestPointOfSaleHttpCommon):
         self.start_tour(
             "/pos/web?config_id=%d" % self.main_pos_config.id,
             "MultipleGiftCardsAsRedeemPayment",
-            login="accountman",
-        )
-
-    def test_coupon_code_in_receipt(self):
-        """
-        Check if coupon code is visible in ticket/receipt for orders paid with a coupon
-        as payment method. It also check that code is shown from refund orders button.
-        """
-        self.start_tour(
-            "/pos/web?config_id=%d" % self.main_pos_config.id,
-            "CouponCodeInRedeemPaymentReceipt",
             login="accountman",
         )

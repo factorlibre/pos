@@ -25,7 +25,9 @@ msgstr "Cupón"
 #: code:addons/pos_loyalty_redeem_payment/models/pos_config.py:0
 #, python-format
 msgid "Coupon ({}) must be redeemed from 'Insert Code' of product screen."
-msgstr "El cupón ({}) debe ser canjeado desde 'Insertar Código' de la pantalla de productos."
+msgstr ""
+"El cupón ({}) debe ser canjeado desde 'Insertar Código' de la pantalla de "
+"productos."
 
 #. module: pos_loyalty_redeem_payment
 #. odoo-python
@@ -35,35 +37,35 @@ msgid "Coupon ({}) must be redeemed from payment screen."
 msgstr "El cupón ({}) debe ser canjeado desde la pantalla de pagos."
 
 #. module: pos_loyalty_redeem_payment
-#: model:ir.model.fields,help:pos_loyalty_redeem_payment.field_pos_payment_method__redeem_code
-msgid "In PoS interface, It allows to set a coupon as a payment method."
-msgstr "En la interfaz del TPV, permite canjear/redimir un vale o tarjeta regalo cómo método de pago."
-
-#. module: pos_loyalty_redeem_payment
 #: model:ir.model.fields.selection,name:pos_loyalty_redeem_payment.selection__loyalty_program__redeem_method__discount
 msgid "Discount"
 msgstr "Descuento"
 
 #. module: pos_loyalty_redeem_payment
 #. odoo-javascript
-#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.js:0
+#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.esm.js:0
 #, python-format
 msgid "Enter Code"
 msgstr "Ingresar código"
 
 #. module: pos_loyalty_redeem_payment
 #. odoo-javascript
-#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.js:0
+#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.esm.js:0
 #, python-format
 msgid "Error"
-msgstr "Error"
+msgstr ""
 
 #. module: pos_loyalty_redeem_payment
 #. odoo-javascript
-#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.js:0
+#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.esm.js:0
 #, python-format
 msgid "Gift Card"
 msgstr "Tarjeta regalo"
+
+#. module: pos_loyalty_redeem_payment
+#: model:ir.model.fields,help:pos_loyalty_redeem_payment.field_pos_payment_method__used_for_loyalty_program
+msgid "In PoS interface, this method allows to redeem a gift."
+msgstr "En la interfaz del TPV, permite canjear una tarjeta regalo"
 
 #. module: pos_loyalty_redeem_payment
 #: model:ir.model,name:pos_loyalty_redeem_payment.model_loyalty_program
@@ -91,18 +93,13 @@ msgstr ""
 
 #. module: pos_loyalty_redeem_payment
 #: model:ir.model.fields,help:pos_loyalty_redeem_payment.field_loyalty_program__pos_payment_method_ids
-msgid "Payment methods related to this program."
-msgstr "Métodos de pago relacionados al programa."
+msgid "Payment methods that can be used to redeem coupons of this program."
+msgstr "Métodos de pago que pueden ser utilizados para canjear cupones de este programa."
 
 #. module: pos_loyalty_redeem_payment
 #: model:ir.model,name:pos_loyalty_redeem_payment.model_pos_config
 msgid "Point of Sale Configuration"
 msgstr "Configuración del TPV"
-
-#. module: pos_loyalty_redeem_payment
-#: model:ir.model,name:pos_loyalty_redeem_payment.model_pos_order
-msgid "Point of Sale Orders"
-msgstr "Pedidos del Punto de Venta"
 
 #. module: pos_loyalty_redeem_payment
 #: model:ir.model,name:pos_loyalty_redeem_payment.model_pos_payment_method
@@ -117,12 +114,7 @@ msgstr "Sesión TPV"
 #. module: pos_loyalty_redeem_payment
 #: model:ir.model.fields,field_description:pos_loyalty_redeem_payment.field_pos_payment_method__program_id
 msgid "Program"
-msgstr "programa"
-
-#. module: pos_loyalty_redeem_payment
-#: model:ir.model.fields,field_description:pos_loyalty_redeem_payment.field_pos_payment_method__redeem_code
-msgid "Redemption Code"
-msgstr "Código de canje"
+msgstr "Programa"
 
 #. module: pos_loyalty_redeem_payment
 #: model:ir.model.fields,field_description:pos_loyalty_redeem_payment.field_loyalty_program__redeem_method
@@ -130,27 +122,22 @@ msgid "Redemption Method"
 msgstr "Método de canje"
 
 #. module: pos_loyalty_redeem_payment
-#: model:ir.model.fields,field_description:pos_loyalty_redeem_payment.field_pos_config__return_voucher
-msgid "Return Voucher"
-msgstr "Vale de devolución"
-
-#. module: pos_loyalty_redeem_payment
 #. odoo-javascript
-#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.js:0
+#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.esm.js:0
 #, python-format
 msgid "Set amount to redeem, up to %s"
 msgstr "Establece el importe a redimir, hasta %s"
 
 #. module: pos_loyalty_redeem_payment
 #. odoo-javascript
-#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.js:0
+#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.esm.js:0
 #, python-format
 msgid ""
 "That coupon code has already been scanned and activated. Please, process "
 "pending orders."
 msgstr ""
-"El código ha sido escaneado y activado. Por favor, procese "
-"las órdenes pendientes."
+"El código ha sido escaneado y activado. Por favor, procese las órdenes "
+"pendientes."
 
 #. module: pos_loyalty_redeem_payment
 #: model:ir.model.fields,help:pos_loyalty_redeem_payment.field_pos_payment__coupon_id
@@ -159,10 +146,15 @@ msgstr "El cupón usado como método de pago."
 
 #. module: pos_loyalty_redeem_payment
 #. odoo-javascript
-#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.js:0
+#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.esm.js:0
 #, python-format
 msgid "There is already an electronic payment in progress."
 msgstr "Hay un pago electrónico en progreso."
+
+#. module: pos_loyalty_redeem_payment
+#: model:ir.model.fields,field_description:pos_loyalty_redeem_payment.field_pos_payment_method__used_for_loyalty_program
+msgid "Used for loyalty program"
+msgstr "Utilizado para programas de fidelización"
 
 #. module: pos_loyalty_redeem_payment
 #. odoo-javascript
@@ -187,9 +179,10 @@ msgstr "Vales"
 
 #. module: pos_loyalty_redeem_payment
 #. odoo-javascript
-#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.js:0
+#: code:addons/pos_loyalty_redeem_payment/static/src/js/PaymentScreen.esm.js:0
 #, python-format
 msgid ""
 "You tried to redeem %s, but maximum for this gift card in this order is %s"
 msgstr ""
-"Has intentado redimir %s, pero el máximo para esta tarjeta regalo en este pedido es %s"
+"Has intentado redimir %s, pero el máximo para esta tarjeta regalo en este "
+"pedido es %s"

@@ -1,18 +1,12 @@
-La configuración necesaria para canjear vales/TR's cómo métodos de pago es:
-
-En un programa de tipo **tarjeta regalo**, seleccionar el campo `Método de canje` cómo **"Método de pago".**
+To allow a loyalty program of type *Gift Card* to be redeemed as a payment
+method, first select *Payment Method* as *Redemption Method*:
 
 .. image:: pos_loyalty_redeem_payment/static/img/redeemMethod.png
    :width: 300
-   :alt: config
+   :alt: Configure a loyalty program to be redeemed as payments
 
-Se deberá configurar un **"método de pago"** en el programa. El cual se asocia a los métodos de pago del TPV.
+Then, choose those *POS Payment Methods* that will be used to redeem cards:
 
 .. image:: pos_loyalty_redeem_payment/static/img/paymentMethod.png
    :width: 300
-   :alt: config
-
-
-En los métodos de pago, el campo `Código para canje` no es editable, se activa si:
- - Tenemos un método de pago asociado a un **programa.**
- - El campo `Método de canje` está configurado como **"Método de pago".**
+   :alt: Select payment methods to be used for card redeeming
