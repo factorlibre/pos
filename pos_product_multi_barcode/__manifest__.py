@@ -13,6 +13,7 @@
         "point_of_sale",
         "product_multi_barcode",
     ],
+    "auto_install": True,
     "assets": {
         "point_of_sale.assets": [
             "pos_product_multi_barcode/static/src/js/db.js",
