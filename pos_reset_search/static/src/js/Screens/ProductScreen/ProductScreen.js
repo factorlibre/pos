@@ -11,7 +11,7 @@ odoo.define("pos_reset_search.ProductScreen", function (require) {
                 var ProductWidget = null;
                 for (const key in ProductScreenChildren) {
                     if (
-                        ProductScreenChildren[key].bdom.el.className ===
+                        ProductScreenChildren[key].bdom.el?.className ===
                         "products-widget"
                     ) {
                         ProductWidget = ProductScreenChildren[key];
