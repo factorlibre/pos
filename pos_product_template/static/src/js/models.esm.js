@@ -7,6 +7,10 @@
 // */
 
 import PosDB from "point_of_sale.DB";
+import {PosGlobalState} from "point_of_sale.models";
+import Registries from "point_of_sale.Registries";
+
+const {markRaw} = owl;
 
 PosDB.include({
     // The maximum number of results returned by a search
@@ -110,3 +114,13 @@ PosDB.include({
         });
     },
 });
+
+export const PosGlobalStateExtend = (OriginalPosGlobalState) =>
+    class extends OriginalPosGlobalState {
+        constructor(obj) {
+            super(obj);
+            this.db = markRaw(this.db);
+        }
+    };
+
+Registries.Model.extend(PosGlobalState, PosGlobalStateExtend);
