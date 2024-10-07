@@ -110,3 +110,11 @@ msgstr "Los almacenes deben pertenecer a la misma empresa que el TPV."
 #: model_terms:ir.ui.view,arch_db:pos_stock_available_online.res_config_settings_view_form
 msgid "warehouse"
 msgstr "almacén"
+
+#. module: pos_stock_available_online
+#. odoo-python
+#: code:addons/pos_stock_available_online/models/stock_notifier_pos_mixin.py:0
+#, python-format
+msgid ""
+"Updating stock of product %s in warehouse %s on the POS"
+msgstr "Actualización en los TPVs del stock del producto %s en el almacén %s ."

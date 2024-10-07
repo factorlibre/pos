@@ -1,4 +1,6 @@
-from odoo import models
+from odoo import _, api, models
+
+from odoo.addons.queue_job.job import identity_exact
 
 
 class StockNotifierPosMixin(models.AbstractModel):
@@ -49,6 +51,21 @@ class StockNotifierPosMixin(models.AbstractModel):
                     ],
                 ).mapped("config_id")
                 if configs:
-                    configs._notify_available_quantity(
-                        record._prepare_pos_message(warehouse)
+                    description = _(
+                        "Updating stock of product %s in warehouse %s on the POS"
+                    ) % (
+                        record.product_id.name,
+                        warehouse.name,
                     )
+
+                    self.env[self._name].with_delay(
+                        description=description,
+                        channel="root.pos_stock_notification",
+                        identity_key=identity_exact,
+                    ).notify_available_quantity_to_pos(
+                        configs, warehouse, record.product_id
+                    )
+
+    @api.model
+    def notify_available_quantity_to_pos(self, configs, warehouse, product_id):
+        configs._notify_available_quantity(warehouse._prepare_vals_for_pos(product_id))
