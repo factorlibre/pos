@@ -8,7 +8,7 @@ class StockQuant(models.Model):
     def write(self, vals):
         res = super().write(vals)
         if "quantity" in vals or "reserved_quantity" in vals:
-            self._notify_pos()
+            self.sudo()._notify_pos()
         return res
 
     def _skip_notify_pos(self):

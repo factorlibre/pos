@@ -12,7 +12,7 @@ class StockMove(models.Model):
             return res
         for line in self:
             if states_dict.get(line.id) != line.state:
-                line._notify_pos()
+                line.sudo()._notify_pos()
         return res
 
     def _action_done(self, cancel_backorder=False):
