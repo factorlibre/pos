@@ -12,7 +12,6 @@
     "version": "16.0.1.0.0",
     "depends": [
         "point_of_sale",
-        "partner_firstname",
     ],
     "assets": {
         "point_of_sale.assets": [
@@ -22,6 +21,7 @@
         ],
     },
     "data": [
+        "data/ir_cron.xml",
         "views/res_config_settings.xml",
         "views/res_users.xml",
     ],
