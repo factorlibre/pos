@@ -28,6 +28,7 @@ ProductScreen.do.clickPartnerButton();
 ProductScreen.do.clickCustomer("Addison Olson");
 
 PosOrderToSaleOrder.do.clickCreateOrderButton();
+PosOrderToSaleOrder.do.addCommitmentDate();
 PosOrderToSaleOrder.do.clickCreateInvoicedOrderButton();
 
 ProductScreen.check.isShown();

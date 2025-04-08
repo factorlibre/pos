@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates id="template" xml:space="preserve">
-
     <t t-name="CreateOrderPopup" owl="1">
         <div class="popup popup-create-sale-order">
-
             <header>
                 <div class="title">Create Order</div>
             </header>
-
             <main class="body">
-
                 <table>
                     <tbody>
+                        <tr
+                            t-if="env.pos.config.iface_sale_order_allow_commitment_date"
+                        >
+                            <td>
+                                <div class="row">
+                                    <label
+                                        class="col-sm-2 col-form-label"
+                                        for="commitment_date"
+                                    >
+                                        Commitment Date
+                                    </label>
+                                    <input
+                                        class="input col-sm-10"
+                                        type="datetime-local"
+                                        t-on-change="updateCommitmentDate"
+                                        name="commitment_date"
+                                    />
+                                </div>
+                            </td>
+                        </tr>
                         <tr t-if="env.pos.config.iface_create_draft_sale_order">
                             <td>
                                 <div
@@ -25,7 +41,6 @@
                                 </div>
                             </td>
                         </tr>
-
                         <tr t-if="env.pos.config.iface_create_confirmed_sale_order">
                             <td>
                                 <div
@@ -39,7 +54,6 @@
                                 </div>
                             </td>
                         </tr>
-
                         <tr t-if="env.pos.config.iface_create_delivered_sale_order">
                             <td>
                                 <div
@@ -54,7 +68,6 @@
                                 </div>
                             </td>
                         </tr>
-
                         <tr t-if="env.pos.config.iface_create_invoiced_sale_order">
                             <td>
                                 <div
@@ -69,18 +82,13 @@
                                     <span>Create Invoiced Sale Order</span>
                                 </div>
                             </td>
-
                         </tr>
                     </tbody>
                 </table>
-
             </main>
-
             <footer class="footer">
                 <div class="button" t-on-click="cancel">Discard</div>
             </footer>
-
         </div>
     </t>
-
 </templates>

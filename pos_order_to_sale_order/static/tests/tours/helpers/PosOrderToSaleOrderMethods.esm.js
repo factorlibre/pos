@@ -32,6 +32,19 @@ class DoExt extends Do {
             },
         ];
     }
+    addCommitmentDate() {
+        return [
+            {
+                content: "Add Commitment Date",
+                trigger: ".popup-create-sale-order input[name='commitment_date']",
+                run: () => {
+                    this.trigger("input", {
+                        target: {value: "2024-01-01T16:00:00"},
+                    });
+                },
+            },
+        ];
+    }
 }
 
 const methods = createTourMethods("PosOrderToSaleOrder", DoExt);

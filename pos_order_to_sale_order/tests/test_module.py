@@ -62,3 +62,10 @@ class TestUi(TestPointOfSaleHttpCommon):
             order.order_line[1].name,
             "'Product Note' must not contains in sale order line description",
         )
+        self.assertTrue(
+            order.commitment_date,
+        )
+        self.assertEqual(
+            order.commitment_date.strftime("%Y-%m-%d %H:%M:%S"),
+            "2024-01-01 16:00:00",
+        )

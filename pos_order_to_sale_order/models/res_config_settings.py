@@ -23,3 +23,7 @@ class ResConfigSettings(models.TransientModel):
     pos_iface_create_invoiced_sale_order = fields.Boolean(
         related="pos_config_id.iface_create_invoiced_sale_order", readonly=False
     )
+
+    iface_sale_order_allow_commitment_date = fields.Boolean(
+        related="pos_config_id.iface_sale_order_allow_commitment_date", readonly=False
+    )
