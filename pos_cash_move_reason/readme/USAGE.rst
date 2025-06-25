@@ -2,7 +2,7 @@
 
 * Click on the button "Put Money In" or "Take Money Out"
 
-.. figure:: ../static/description/pos_session_form.png
+.. figure:: ../static/description/pos_session_form.jpeg
 
 * Select the reason, the journal, the amount, and optionaly an extra
   description

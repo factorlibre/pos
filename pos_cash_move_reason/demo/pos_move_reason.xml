@@ -9,14 +9,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="name">Bank Deposit</field>
         <field name="is_income_reason" eval="False" />
         <field name="is_expense_reason" eval="True" />
-        <field name="expense_account_id" ref="bank_deposit_account" />
+        <field name="expense_account_id" ref="bank_suspense_account" />
         <field
             name="journal_ids"
             model="account.journal"
-            search="[
-            ('type', '=', 'cash'),
-            ('company_id', '=', obj().env.ref('base.main_company').id),
-        ]"
+            eval="[(4, ref('account_journal_cash'))]"
         />
         <field name="company_id" ref="base.main_company" />
     </record>
@@ -28,10 +25,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field
             name="journal_ids"
             model="account.journal"
-            search="[
-            ('type', '=', 'cash'),
-            ('company_id', '=', obj().env.ref('base.main_company').id),
-        ]"
+            eval="[(4, ref('account_journal_cash'))]"
         />
         <field name="company_id" ref="base.main_company" />
     </record>

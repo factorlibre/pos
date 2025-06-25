@@ -17,5 +17,9 @@
         "views/view_pos_session.xml",
         "wizard/wizard_pos_move_reason.xml",
     ],
-    "demo": ["demo/account_account.xml", "demo/pos_move_reason.xml"],
+    "demo": [
+        "demo/account_account.xml",
+        "demo/account_journal.xml",
+        "demo/pos_move_reason.xml",
+    ],
 }
