@@ -9,7 +9,7 @@
             name="model_id"
             ref="pos_stock_available_online.model_stock_notifier_pos_mixin"
         />
-        <field name="method">notify_available_quantity_to_pos</field>
+        <field name="method">notify_batch_to_pos</field>
         <field name="channel_id" ref="pos_stock_notification" />
     </record>
 </odoo>
