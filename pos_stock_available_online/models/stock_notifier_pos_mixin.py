@@ -50,7 +50,7 @@ class StockNotifierPosMixin(models.AbstractModel):
                         warehouse.name,
                     )
 
-                    self.env[self._name].with_delay(
+                    self.env["stock.notifier.pos.mixin"].with_delay(
                         description=description,
                         channel="root.pos_stock_notification",
                         identity_key=identity_exact,
