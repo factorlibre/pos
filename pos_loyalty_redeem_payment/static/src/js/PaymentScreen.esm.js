@@ -164,12 +164,15 @@ export const CouponPosPaymentScreen = (OriginalPaymentScreen) =>
                     kwargs: {context: session.user_context},
                 });
                 if (payload.coupon_report) {
-                    for (const report_entry of Object.entries(payload.coupon_report)) {
-                        await this.env.legacyActionManager.do_action(report_entry[0], {
-                            additional_context: {
-                                active_ids: report_entry[1],
-                            },
-                        });
+                    order.coupon_report = payload.coupon_report;
+                    if (!this.env.pos.config.iface_print_auto){
+                        for (const report_entry of Object.entries(payload.coupon_report)) {
+                            await this.env.legacyActionManager.do_action(report_entry[0], {
+                                additional_context: {
+                                    active_ids: report_entry[1],
+                                },
+                            });
+                        }
                     }
                 }
                 if (payload.new_coupon_info) {
