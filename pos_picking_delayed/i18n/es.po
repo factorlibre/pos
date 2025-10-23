@@ -4,12 +4,12 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-07-27 11:19+0000\n"
-"Last-Translator: Daniel Martinez Vila <daniel.martinez@qubiq.es>\n"
-"Language-Team: none\n"
-"Language: es\n"
+"POT-Creation-Date: 2025-10-27 08:30+0000\n"
+"PO-Revision-Date: 2025-10-27 08:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -39,8 +39,16 @@ msgstr "Ha retrasado el picking"
 
 #. module: pos_picking_delayed
 #: model:ir.model.fields,field_description:pos_picking_delayed.field_pos_config__picking_creation_delayed
+#: model:ir.model.fields,field_description:pos_picking_delayed.field_res_config_settings__picking_creation_delayed
 msgid "Picking Creation Delayed"
 msgstr "Creación de picking retrasada"
+
+#. module: pos_picking_delayed
+#. odoo-python
+#: code:addons/pos_picking_delayed/models/res_config_settings.py:0
+#, python-format
+msgid "Picking Creation Delayed Warning"
+msgstr "Error con 'Creación de picking retrasada'"
 
 #. module: pos_picking_delayed
 #: model:ir.model,name:pos_picking_delayed.model_pos_config
@@ -51,6 +59,17 @@ msgstr "Configuración del punto de venta"
 #: model:ir.model,name:pos_picking_delayed.model_pos_order
 msgid "Point of Sale Orders"
 msgstr "Pedidos de Punto de Venta"
+
+#. module: pos_picking_delayed
+#. odoo-python
+#: code:addons/pos_picking_delayed/models/res_config_settings.py:0
+#, python-format
+msgid ""
+"The setting 'Picking Creation Delayed' is only compatible with 'Inventory "
+"Management' in real time."
+msgstr ""
+"La configuración 'Creación de picking retrasada' solo es compatible con la "
+"'Gestión del inventario' en tiempo real."
 
 #. module: pos_picking_delayed
 #: model:ir.model.fields,help:pos_picking_delayed.field_pos_order__has_picking_delayed

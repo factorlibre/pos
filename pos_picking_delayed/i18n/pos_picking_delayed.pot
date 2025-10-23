@@ -44,6 +44,13 @@ msgid "Picking Creation Delayed"
 msgstr ""
 
 #. module: pos_picking_delayed
+#. odoo-python
+#: code:addons/pos_picking_delayed/models/res_config_settings.py:0
+#, python-format
+msgid "Picking Creation Delayed Warning"
+msgstr ""
+
+#. module: pos_picking_delayed
 #: model:ir.model,name:pos_picking_delayed.model_pos_config
 msgid "Point of Sale Configuration"
 msgstr ""
@@ -51,6 +58,15 @@ msgstr ""
 #. module: pos_picking_delayed
 #: model:ir.model,name:pos_picking_delayed.model_pos_order
 msgid "Point of Sale Orders"
+msgstr ""
+
+#. module: pos_picking_delayed
+#. odoo-python
+#: code:addons/pos_picking_delayed/models/res_config_settings.py:0
+#, python-format
+msgid ""
+"The setting 'Picking Creation Delayed' is only compatible with 'Inventory "
+"Management' in real time."
 msgstr ""
 
 #. module: pos_picking_delayed
