@@ -13,9 +13,4 @@
     "data": ["views/res_config_settings_view.xml"],
     "website": "https://github.com/OCA/pos",
     "installable": True,
-    "assets": {
-        "point_of_sale.assets": [
-            "pos_default_partner/static/src/js/**/*.js",
-        ]
-    },
 }
