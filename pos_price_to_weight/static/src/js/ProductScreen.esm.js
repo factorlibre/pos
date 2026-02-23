@@ -19,6 +19,24 @@ const PosPriceToWeightProductScreen = (OriginalProductScreen) =>
                 price_to_weight: this._barcodeProductAction,
             });
         }
+        async getQuantityFromPrice(product, price) {
+            const product_price = product.lst_price;
+            if (product_price === 0) {
+                return 0;
+            }
+            const taxes = this.env.pos.get_taxes_after_fp(product.taxes_id);
+            const allPrices = this.env.pos.compute_all(
+                taxes,
+                product_price,
+                1,
+                this.env.pos.currency.rounding
+            );
+            const isTaxIncluded = this.env.pos.config.is_price_to_weight_tax_included;
+            if (isTaxIncluded) {
+                return price / allPrices.total_included;
+            }
+            return price / allPrices.total_excluded;
+        }
         async _barcodeProductAction(code) {
             if (code.type !== "price_to_weight") {
                 return await super._barcodeProductAction(...arguments);
@@ -37,13 +55,8 @@ const PosPriceToWeightProductScreen = (OriginalProductScreen) =>
 
             // update the options depending on the type of the scanned code
 
-            var quantity = 0;
-            var barcode_price = parseFloat(code.value, 10) || 0;
-            var product_price = product.lst_price;
-
-            if (product_price !== 0) {
-                quantity = barcode_price / product_price;
-            }
+            const barcode_price = parseFloat(code.value, 10) || 0;
+            const quantity = await this.getQuantityFromPrice(product, barcode_price);
             Object.assign(options, {
                 quantity: quantity,
                 merge: false,
