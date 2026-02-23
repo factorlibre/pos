@@ -19,7 +19,7 @@
     ],
     "assets": {
         "point_of_sale.assets": [
-            "pos_price_to_weight/static/src/js/ProductScreen.js",
+            "pos_price_to_weight/static/src/js/*.js",
         ],
     },
     "installable": True,
