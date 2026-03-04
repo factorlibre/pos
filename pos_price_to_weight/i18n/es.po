@@ -20,6 +20,13 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 
 #. module: pos_price_to_weight
+#: model_terms:ir.ui.view,arch_db:pos_price_to_weight.res_config_settings_view_form
+msgid ""
+"<i class=\"fa fa-info-circle me-1\" title=\"This setting is common to all "
+"PoS.\" pos-data-toggle=\"tooltip\"/>"
+msgstr ""
+
+#. module: pos_price_to_weight
 #: model:product.template,name:pos_price_to_weight.product_price_to_weight_barcode_product_template
 msgid "Apples (with Price To Weight Barcode)"
 msgstr "Manzanas (con código de barras de precio)"
@@ -30,9 +37,38 @@ msgid "Barcode Rule"
 msgstr "Regla de código de barras"
 
 #. module: pos_price_to_weight
+#: model:ir.model,name:pos_price_to_weight.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: pos_price_to_weight
+#: model:ir.model,name:pos_price_to_weight.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: pos_price_to_weight
+#: model:ir.model,name:pos_price_to_weight.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuración del punto de venta"
+
+#. module: pos_price_to_weight
+#: model:ir.model.fields,field_description:pos_price_to_weight.field_pos_config__is_price_to_weight_tax_included
+#: model:ir.model.fields,field_description:pos_price_to_weight.field_res_company__is_price_to_weight_tax_included
+#: model:ir.model.fields,field_description:pos_price_to_weight.field_res_config_settings__is_price_to_weight_tax_included
+msgid "Price (Computed Weight) Barcodes Include Taxes"
+msgstr ""
+
+#. module: pos_price_to_weight
 #: model:ir.model.fields.selection,name:pos_price_to_weight.selection__barcode_rule__type__price_to_weight
 msgid "Priced Product (Computed Weight)"
 msgstr "Producto con precio (precio calculado)"
+
+#. module: pos_price_to_weight
+#: model_terms:ir.ui.view,arch_db:pos_price_to_weight.res_config_settings_view_form
+msgid ""
+"Prices encoded in barcodes of type \"Priced Product (Computed Weight)\" have "
+"taxes included."
+msgstr ""
 
 #. module: pos_price_to_weight
 #: model:ir.model.fields,field_description:pos_price_to_weight.field_barcode_rule__type
@@ -62,9 +98,6 @@ msgstr "Tipo"
 
 #~ msgid "Package"
 #~ msgstr "Paquete"
-
-#~ msgid "Point of Sale Configuration"
-#~ msgstr "Configuración del punto de venta"
 
 #~ msgid "Price To Weight Field"
 #~ msgstr "Campo de precio a peso"
