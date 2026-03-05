@@ -65,6 +65,7 @@ addon | version | maintainers | summary
 [pos_partner_location_abstract](pos_partner_location_abstract/) | 16.0.1.0.1 |  | POS Partner Location Abstract
 [pos_partner_location_google_map](pos_partner_location_google_map/) | 16.0.1.0.1 |  | POS Partner Location Google Map
 [pos_partner_no_create](pos_partner_no_create/) | 16.0.1.0.0 |  | Forbid customer creation from the POS
+[pos_partner_pricelist_load_background](pos_partner_pricelist_load_background/) | 16.0.1.0.0 |  | Pos
 [pos_partner_sale_warning](pos_partner_sale_warning/) | 16.0.1.0.0 |  | Show partner sales warning in POS
 [pos_payment_change](pos_payment_change/) | 16.0.1.0.4 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Allow cashier to change order payments, as long as the session is not closed.
 [pos_payment_description](pos_payment_description/) | 16.0.1.0.0 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Payment description on order tree view
