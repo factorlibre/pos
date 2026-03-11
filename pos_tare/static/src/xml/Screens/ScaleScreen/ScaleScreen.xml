@@ -13,7 +13,7 @@
             </div>
             <t t-if="env.pos.config.iface_gross_weight_method == 'scale'">
                 <div class="computed-price weight-value">
-                    <t t-out="state.gross_weight" /> <t t-out="gross_uom.name" />
+                    <t t-out="state.gross_weight_str" /> <t t-out="gross_uom.name" />
                 </div>
             </t>
             <t t-else="">
@@ -24,7 +24,7 @@
                         t-att-class="{'invalid-input': !state.gross_weight_input_valid}"
                         id="input_gross_weight"
                         placeholder="0"
-                        t-model="state.gross_weight"
+                        t-model="state.gross_weight_str"
                         t-on-input="updateWeight"
                     /> <t t-out="gross_uom.name" />
                 </div>
@@ -34,7 +34,7 @@
             </div>
             <t t-if="env.pos.config.iface_tare_method == 'barcode'">
                 <div class="computed-price weight-value">
-                    <t t-out="state.tare" /> <t
+                    <t t-out="state.tare_str" /> <t
                         t-out="env.pos.config.iface_tare_uom_id[1]"
                     />
                 </div>
@@ -47,7 +47,7 @@
                         t-att-class="{'invalid-input': !state.tare_input_valid}"
                         id="input_weight_tare"
                         placeholder="0"
-                        t-model="state.tare"
+                        t-model="state.tare_str"
                         t-on-input="updateWeight"
                     /> <t t-out="env.pos.config.iface_tare_uom_id[1]" />
                 </div>

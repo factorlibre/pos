@@ -10,12 +10,17 @@ const TareScaleScreen = (ScaleScreen_) =>
     class extends ScaleScreen_ {
         setup() {
             super.setup();
+            this.decimalPoint = this.env._t.database.parameters.decimal_point;
             this.state = useState({
-                tare: this.props.product.tare_weight || "",
-                weight: 0,
-                gross_weight: "",
-                gross_weight_input_valid: true,
+                tare_str: this.props.product.tare_weight
+                    ? this._formatFloatValue(this.props.product.tare_weight)
+                    : "",
+                tare: this.props.product.tare_weight || 0,
                 tare_input_valid: true,
+                weight: 0,
+                gross_weight_str: "",
+                gross_weight: 0,
+                gross_weight_input_valid: true,
             });
             this.updateWeight();
             if (this.env.pos.config.iface_tare_method !== "manual") {
@@ -45,7 +50,7 @@ const TareScaleScreen = (ScaleScreen_) =>
         }
 
         async _barcodeTareAction(code) {
-            this.state.tare = code.value;
+            this.state.tare_str = this._formatFloatValue(code.value);
         }
 
         _readScale() {
@@ -57,6 +62,10 @@ const TareScaleScreen = (ScaleScreen_) =>
         async _setWeight() {
             await super._setWeight();
             this.state.gross_weight = this.state.weight;
+            // This is necessary to display the weight in the UI. It is not a
+            // string value in this case, which ensures that it won't be
+            // converted.
+            this.state.gross_weight_str = this.state.gross_weight;
             try {
                 this._computeWeight();
             } catch (error) {
@@ -87,12 +96,34 @@ const TareScaleScreen = (ScaleScreen_) =>
                 // called, and the weight is not computed in _computeWeight()
                 // when no tare is set to avoid a possible error). Therefore
                 // it needs to be set here.
-                this.state.weight = parseFloat(this.state.gross_weight);
+                this.state.weight = this.state.gross_weight;
             }
         }
 
+        _parseFloatValue(value) {
+            // Similar code as in Orderline.set_quantity(), to correctly
+            // handle different decimal separators and values that have
+            // already be converted from string to number.
+            if (typeof value === "number") {
+                return value;
+            }
+            // We don't use field_utils.parse.float() because we don't want to
+            // support thousands separators. There are locales where the
+            // thousands separator is a dot, and we want the user to be able
+            // to use the dot in addition to the locale's decimal separator.
+            return Number(value.replace(this.decimalPoint, "."));
+        }
+
+        _formatFloatValue(value) {
+            return String(value).replace(".", this.decimalPoint);
+        }
+
         _computeWeight() {
+            this.state.gross_weight = this._parseFloatValue(
+                this.state.gross_weight_str
+            );
             this.state.gross_weight_input_valid = !isNaN(this.state.gross_weight);
+            this.state.tare = this._parseFloatValue(this.state.tare_str);
             this.state.tare_input_valid = !isNaN(this.state.tare);
             if (!this.state.gross_weight_input_valid || !this.state.tare_input_valid) {
                 // This is to ensure that the resulting weight is invalid.
@@ -127,7 +158,7 @@ const TareScaleScreen = (ScaleScreen_) =>
                 payload: {
                     weight: {
                         weight: this.state.weight,
-                        tare: this.state.tare ? parseFloat(this.state.tare) : 0,
+                        tare: this.state.tare,
                     },
                 },
             });

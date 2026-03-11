@@ -3,6 +3,7 @@
 import {convert_mass, format_tare} from "./tools.esm";
 import {Model} from "point_of_sale.Registries";
 import {Orderline} from "point_of_sale.models";
+import field_utils from "web.field_utils";
 
 const TareOrderline = (Orderline_) =>
     class extends Orderline_ {
@@ -56,11 +57,21 @@ const TareOrderline = (Orderline_) =>
                 this.reset_tare();
             }
 
+            if (quantity === "remove") {
+                return;
+            }
+
             // We convert the tare that is always measured in the same UoM into
             // the unit of measure for this order line.
             const tare_uom = this.pos.config.iface_tare_uom_id[0];
             const tare_unit = this.pos.units_by_id[tare_uom];
-            const tare = parseFloat(quantity) || 0;
+            // Same code as in Orderline.set_quantity(), to correctly handle
+            // different decimal separators and values that have already be
+            // converted from string to number.
+            const tare =
+                typeof quantity === "number"
+                    ? quantity
+                    : field_utils.parse.float(String(quantity ? quantity : 0));
             const line_unit = this.get_unit();
             // This will throw an exception if the UoM categories don't match.
             const tare_in_product_uom = convert_mass(tare, tare_unit, line_unit);
