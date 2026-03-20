@@ -5,7 +5,7 @@
         <xpath expr="//input[@name='name']" position="attributes">
             <attribute
                 name="t-attf-style"
-            >display: {{changes.is_company ? 'block': 'none'}}</attribute>
+            >visibility: {{changes.is_company ? 'visible': 'hidden'}}</attribute>
         </xpath>
         <xpath expr="//div[hasclass('partner-details-left')]/div[1]" position="before">
             <div class="partner-detail">
