@@ -36,6 +36,21 @@ odoo.define("pos_partner_firstname.PartnerDetailsEdit", function (require) {
                 }
                 return name.trim();
             }
+            _validateFirstnameLastname(processedChanges) {
+                if (
+                    (!this.props.partner.firstname && !processedChanges.firstname) ||
+                    processedChanges.firstname === "" ||
+                    (!this.props.partner.lastname && !processedChanges.lastname) ||
+                    processedChanges.lastname === ""
+                ) {
+                    this.showPopup("ErrorPopup", {
+                        title: _t("Both Customer First and Last Name Are Required"),
+                    });
+                    return false;
+                }
+                return true;
+            }
+
             saveChanges() {
                 const processedChanges = {};
                 for (const [key, value] of Object.entries(this.changes)) {
@@ -47,16 +62,8 @@ odoo.define("pos_partner_firstname.PartnerDetailsEdit", function (require) {
                 }
                 const checked = this.changes.is_company;
                 if (!checked) {
-                    if (
-                        (!this.props.partner.firstname &&
-                            !processedChanges.firstname) ||
-                        processedChanges.firstname === "" ||
-                        (!this.props.partner.lastname && !processedChanges.lastname) ||
-                        processedChanges.lastname === ""
-                    ) {
-                        return this.showPopup("ErrorPopup", {
-                            title: _t("Both Customer First and Last Name Are Required"),
-                        });
+                    if (!this._validateFirstnameLastname(processedChanges)) {
+                        return;
                     }
                     this.changes.name = this._update_partner_name(
                         processedChanges.lastname,
