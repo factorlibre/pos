@@ -10,12 +10,12 @@ To configure this module, you need to:
 Note: This box is NOT enabled by default except in demo data for the type
 'Delivery Orders' of the demo company 'YourCompany'.
 
-#. Go to Point of Sale / Configuration / Point of Sales
+#. Go to Point of Sale / Configuration / Settings
 #. Select the Point(s) of Sales witch those you want to enable the feature
 #. Check the box 'Load Pickings'
 #. Set the max quantity of pickings you want to load
 
-.. figure:: ../static/description/pos_config_form.png
+.. figure:: ../static/description/res_config_settings.png
    :width: 800 px
 
 Note: This box is enabled by default

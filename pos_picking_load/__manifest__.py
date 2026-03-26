@@ -16,7 +16,7 @@
         "point_of_sale",
     ],
     "data": [
-        "views/view_pos_config.xml",
+        "views/view_res_config_settings.xml",
         "views/view_sale_order.xml",
         "views/view_stock_picking.xml",
         "views/view_stock_picking_type.xml",

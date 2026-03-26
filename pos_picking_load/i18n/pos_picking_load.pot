@@ -58,6 +58,11 @@ msgid "Cannot access order management screen if offline."
 msgstr ""
 
 #. module: pos_picking_load
+#: model:ir.model,name:pos_picking_load.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: pos_picking_load
 #. odoo-javascript
 #: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
 #: code:addons/pos_picking_load/static/src/js/widget.js:0
@@ -74,10 +79,10 @@ msgid "Customer"
 msgstr ""
 
 #. module: pos_picking_load
-#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_pos_config_form
+#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_res_config_settings_form
 msgid ""
 "Enable the possibility to load pickings in the Point of\n"
-"                                Sale"
+"                            Sale"
 msgstr ""
 
 #. module: pos_picking_load
@@ -103,13 +108,15 @@ msgstr ""
 
 #. module: pos_picking_load
 #: model:ir.model.fields,field_description:pos_picking_load.field_pos_config__iface_load_picking
-#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_pos_config_form
+#: model:ir.model.fields,field_description:pos_picking_load.field_res_config_settings__pos_iface_load_picking
+#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_res_config_settings_form
 msgid "Load Pickings"
 msgstr ""
 
 #. module: pos_picking_load
 #: model:ir.model.fields,field_description:pos_picking_load.field_pos_config__iface_load_picking_max_qty
-#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_pos_config_form
+#: model:ir.model.fields,field_description:pos_picking_load.field_res_config_settings__pos_iface_load_picking_max_qty
+#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_res_config_settings_form
 msgid "Max Picking Quantity To Load"
 msgstr ""
 
@@ -148,11 +155,6 @@ msgstr ""
 #: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid "Pending Picking"
-msgstr ""
-
-#. module: pos_picking_load
-#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_pos_config_form
-msgid "Picking Load"
 msgstr ""
 
 #. module: pos_picking_load
