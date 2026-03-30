@@ -18,6 +18,7 @@
     "depends": [
         "point_of_sale",
         "partner_firstname",
+        "pos_partner_is_company",
     ],
     "assets": {
         "point_of_sale.assets": [
