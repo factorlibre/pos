@@ -27,6 +27,12 @@ msgid "Contact"
 msgstr "Contatto"
 
 #. module: pos_receipt_replace_user_by_trigram
+#: model:ir.actions.server,name:pos_receipt_replace_user_by_trigram.ir_cron_generate_pos_trigram_ir_actions_server
+#: model:ir.cron,cron_name:pos_receipt_replace_user_by_trigram.ir_cron_generate_pos_trigram
+msgid "POS: generate user trigram"
+msgstr ""
+
+#. module: pos_receipt_replace_user_by_trigram
 #: model:ir.model,name:pos_receipt_replace_user_by_trigram.model_pos_config
 msgid "Point of Sale Configuration"
 msgstr "Configurazione punto vendita"
@@ -50,7 +56,6 @@ msgstr "Sostituisce l'utente con il trigramma nelle ricevute POS"
 
 #. module: pos_receipt_replace_user_by_trigram
 #. odoo-javascript
-#: code:addons/pos_receipt_replace_user_by_trigram/static/src/xml/order_receipt.xml:0
 #: code:addons/pos_receipt_replace_user_by_trigram/static/src/xml/order_receipt.xml:0
 #, python-format
 msgid "Served by"
