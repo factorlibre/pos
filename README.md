@@ -33,7 +33,7 @@ addon | version | maintainers | summary
 [pos_customer_comment](pos_customer_comment/) | 16.0.1.0.3 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Display Customer comment in the PoS front office and allow to edit and save it by the cashier
 [pos_customer_tree_view_vat](pos_customer_tree_view_vat/) | 16.0.1.0.1 | <a href='https://github.com/mileo'><img src='https://github.com/mileo.png' width='32' height='32' style='border-radius:50%;' alt='mileo'/></a> | Point of Sale: Show VAT number at Customer Tree View
 [pos_daily_sales_reports_category_only](pos_daily_sales_reports_category_only/) | 16.0.1.0.1 |  | Show Sales Reports by Category
-[pos_default_partner](pos_default_partner/) | 16.0.1.0.2 |  | Add a default customer in pos order
+[pos_default_partner](pos_default_partner/) | 16.0.1.0.3 |  | Add a default customer in pos order
 [pos_discount_all](pos_discount_all/) | 16.0.1.0.1 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Display discount amount on PoS cashier screen and print it on ticketcalculated from the difference between a sale with default pricelist
 [pos_edit_order_line](pos_edit_order_line/) | 16.0.1.0.1 |  | POS Edit Order Line
 [pos_escpos_status](pos_escpos_status/) | 16.0.1.0.1 |  | Point of sale: fetch status for 'escpos' driver
