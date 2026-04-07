@@ -82,6 +82,7 @@ setuptools.setup(
         'odoo-addon-pos_receipt_usability>=16.0dev,<16.1dev',
         'odoo-addon-pos_receipt_vat_detail>=16.0dev,<16.1dev',
         'odoo-addon-pos_report_session_summary>=16.0dev,<16.1dev',
+        'odoo-addon-pos_require_product_quantity>=16.0dev,<16.1dev',
         'odoo-addon-pos_reset_search>=16.0dev,<16.1dev',
         'odoo-addon-pos_restaurant_receipt_usability>=16.0dev,<16.1dev',
         'odoo-addon-pos_sale_order_print>=16.0dev,<16.1dev',
