@@ -91,7 +91,7 @@ addon | version | maintainers | summary
 [pos_product_quick_info](pos_product_quick_info/) | 16.0.1.0.2 |  | Display product info by one click in Point of Sale
 [pos_receipt_hide_info](pos_receipt_hide_info/) | 16.0.1.0.0 |  | Removes Information from POS receipt.
 [pos_receipt_hide_price](pos_receipt_hide_price/) | 16.0.1.0.0 |  | Add button to remove price from receipt.
-[pos_receipt_replace_user_by_trigram](pos_receipt_replace_user_by_trigram/) | 16.0.1.0.0 |  | Replace User by Trigram in POS receipt.
+[pos_receipt_replace_user_by_trigram](pos_receipt_replace_user_by_trigram/) | 16.0.2.0.0 |  | Replace User by Trigram in POS receipt.
 [pos_receipt_replace_user_by_trigram_hr](pos_receipt_replace_user_by_trigram_hr/) | 16.0.1.0.1 |  | Link module between pos_receipt_replace_user_by_trigram and pos_hr
 [pos_receipt_usability](pos_receipt_usability/) | 16.0.1.0.0 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Improve receipt screen in the PoS front office
 [pos_receipt_vat_detail](pos_receipt_vat_detail/) | 16.0.1.0.0 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Add Vat Details on Receipt (base and vat amounts).

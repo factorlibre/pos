@@ -9,7 +9,7 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "version": "16.0.1.0.0",
+    "version": "16.0.2.0.0",
     "depends": [
         "point_of_sale",
     ],
