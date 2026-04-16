@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ======================
 POS cash in-out reason
 ======================
@@ -13,7 +17,7 @@ POS cash in-out reason
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpos-lightgray.png?logo=github
@@ -31,7 +35,7 @@ POS cash in-out reason
 This module allow to define some reasons for the functionality of
 "Put Money In" and "Take Money Out" available in point of sale session.
 
-So, with this module it's possible to impact directly an expense or income
+So, with this module it is possible to impact directly an expense or income
 account which is defined on the related reasons and create according
 accounting entries.
 

@@ -1,7 +1,7 @@
 This module allow to define some reasons for the functionality of
 "Put Money In" and "Take Money Out" available in point of sale session.
 
-So, with this module it's possible to impact directly an expense or income
+So, with this module it is possible to impact directly an expense or income
 account which is defined on the related reasons and create according
 accounting entries.
 
