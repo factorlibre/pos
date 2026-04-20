@@ -21,8 +21,9 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:274
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/LoadPickingButtonWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid ""
 "A picking is still loaded. You can not load another picking. Please create a "
@@ -37,37 +38,61 @@ msgid "Available in Point Of Sale"
 msgstr "Disponibile nel punto vendita"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:243
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/xml/screen/PickingLoadControlPanel.xml:0
+#, python-format
+msgid "Back"
+msgstr ""
+
+#. module: pos_picking_load
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid "Can not execute this action because the POS is currently offline"
 msgstr "Impossibile eseguire questa azione perchè il POS è attualmente offline"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:25
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:0
 #, python-format
 msgid "Cancel"
 msgstr "Annulla"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:242
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/LoadPickingButtonWidget.js:0
+#, python-format
+msgid "Cannot access order management screen if offline."
+msgstr ""
+
+#. module: pos_picking_load
+#: model:ir.model,name:pos_picking_load.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: pos_picking_load
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid "Connection error"
 msgstr "Errore di connessione"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:51
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:0
+#: code:addons/pos_picking_load/static/src/xml/screen/PickingLoadList.xml:0
 #, python-format
 msgid "Customer"
 msgstr "Cliente"
 
 #. module: pos_picking_load
-#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_pos_config_form
-msgid "Enable the possibility to load pickings in the Point of Sale"
-msgstr "Consente la possibilità di caricare prelievi nel punto vendita"
+#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_res_config_settings_form
+msgid ""
+"Enable the possibility to load pickings in the Point of\n"
+"                            Sale"
+msgstr ""
 
 #. module: pos_picking_load
 #: model:ir.model.fields,field_description:pos_picking_load.field_sale_order__final_pos_order_id
@@ -85,30 +110,42 @@ msgstr ""
 "e pagati nel punto vendita"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:285
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/LoadPickingButtonWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid "Load Picking"
 msgstr "Carica prelievo"
 
 #. module: pos_picking_load
 #: model:ir.model.fields,field_description:pos_picking_load.field_pos_config__iface_load_picking
-#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_pos_config_form
+#: model:ir.model.fields,field_description:pos_picking_load.field_res_config_settings__pos_iface_load_picking
+#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_res_config_settings_form
 msgid "Load Pickings"
 msgstr "Carica prelievi"
 
 #. module: pos_picking_load
 #: model:ir.model.fields,field_description:pos_picking_load.field_pos_config__iface_load_picking_max_qty
-#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_pos_config_form
+#: model:ir.model.fields,field_description:pos_picking_load.field_res_config_settings__pos_iface_load_picking_max_qty
+#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_res_config_settings_form
 msgid "Max Picking Quantity To Load"
 msgstr "Quantità massima prelievo da caricare"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:50
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:0
+#: code:addons/pos_picking_load/static/src/xml/screen/PickingLoadList.xml:0
 #, python-format
 msgid "Name"
 msgstr "Nome"
+
+#. module: pos_picking_load
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/LoadPickingButtonWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/Screen/PickingLoadFetcher.js:0
+#, python-format
+msgid "Network Error"
+msgstr ""
 
 #. module: pos_picking_load
 #: model:ir.model.fields,field_description:pos_picking_load.field_pos_order__origin_picking_id
@@ -116,29 +153,24 @@ msgid "Origin Picking"
 msgstr "Prelievo origine"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:72
-#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:80
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:0
 #, python-format
 msgid "Origin Picking:"
 msgstr "Prelievo origine:"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:273
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/LoadPickingButtonWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid "Pending Picking"
 msgstr "Prelievo in sospeso"
 
 #. module: pos_picking_load
-#: model_terms:ir.ui.view,arch_db:pos_picking_load.view_pos_config_form
-msgid "Picking Load"
-msgstr "Carico prelievo"
-
-#. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:150
-#: code:addons/pos_picking_load/static/src/js/widget.js:166
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid "Picking Still Loaded"
 msgstr "Prelievo ancora caricato"
@@ -160,47 +192,53 @@ msgstr "Ordini punto vendita"
 
 #. module: pos_picking_load
 #: model:ir.model,name:pos_picking_load.model_sale_order
-msgid "Sale Order"
-msgstr "Ordine di vendita"
+msgid "Sales Order"
+msgstr ""
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:52
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:0
+#: code:addons/pos_picking_load/static/src/xml/screen/PickingLoadList.xml:0
 #, python-format
 msgid "Scheduled Date"
 msgstr "Data schedulata"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:33
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:0
+#: code:addons/pos_picking_load/static/src/xml/screen/PickingLoadControlPanel.xml:0
 #, python-format
 msgid "Search Picking"
 msgstr "Cerca prelievo"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:29
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:0
+#: code:addons/pos_picking_load/static/src/xml/screen/PickingLoadControlPanel.xml:0
 #, python-format
 msgid "Select"
 msgstr "Seleziona"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:235
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid "Server Error"
 msgstr "Errore server"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:53
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/xml/pos_picking_load.xml:0
+#: code:addons/pos_picking_load/static/src/xml/screen/PickingLoadList.xml:0
 #, python-format
 msgid "Source Document"
 msgstr "Documento di origine"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:236
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid "The server encountered an error while receiving your order."
 msgstr "Il server ha riscontrato un errore nel ricevere l'ordine."
@@ -225,8 +263,16 @@ msgid "Transfer"
 msgstr "Trasferimento"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:119
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/PickingLoadFetcher.js:0
+#, python-format
+msgid "Unable to fetch orders if offline."
+msgstr ""
+
+#. module: pos_picking_load
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid ""
 "Unable to load some picking lines because the products are not available in "
@@ -244,8 +290,9 @@ msgstr ""
 "  * "
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:167
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid ""
 "Unable to load this picking because it has been loaded in another confirmed "
@@ -257,8 +304,9 @@ msgstr ""
 "\n"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:151
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid ""
 "Unable to load this picking because it has been loaded in another draft PoS "
@@ -270,8 +318,9 @@ msgstr ""
 "\n"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:137
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid ""
 "Unable to load this picking because the partner is not known in the Point Of "
@@ -281,15 +330,26 @@ msgstr ""
 "nel punto vendita come cliente"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:136
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid "Unknown Partner"
 msgstr "Partner non riconosciuto"
 
 #. module: pos_picking_load
-#. openerp-web
-#: code:addons/pos_picking_load/static/src/js/widget.js:118
+#. odoo-javascript
+#: code:addons/pos_picking_load/static/src/js/Screen/LoadPickingScreenWidget.js:0
+#: code:addons/pos_picking_load/static/src/js/widget.js:0
 #, python-format
 msgid "Unknown Products"
 msgstr "Prodotti non riconosciuti"
+
+#~ msgid "Enable the possibility to load pickings in the Point of Sale"
+#~ msgstr "Consente la possibilità di caricare prelievi nel punto vendita"
+
+#~ msgid "Picking Load"
+#~ msgstr "Carico prelievo"
+
+#~ msgid "Sale Order"
+#~ msgstr "Ordine di vendita"

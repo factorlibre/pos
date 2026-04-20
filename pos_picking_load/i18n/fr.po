@@ -62,7 +62,9 @@ msgstr "Annuler"
 #: code:addons/pos_picking_load/static/src/js/LoadPickingButtonWidget.js:0
 #, python-format
 msgid "Cannot access order management screen if offline."
-msgstr "Vous ne pouvez pas accéder à l'écran de gestion des bons de livraison si votre point de vente est hors ligne"
+msgstr ""
+"Vous ne pouvez pas accéder à l'écran de gestion des bons de livraison si "
+"votre point de vente est hors ligne"
 
 #. module: pos_picking_load
 #: model:ir.model,name:pos_picking_load.model_res_config_settings
@@ -144,6 +146,7 @@ msgstr "Nom"
 #. odoo-javascript
 #: code:addons/pos_picking_load/static/src/js/LoadPickingButtonWidget.js:0
 #: code:addons/pos_picking_load/static/src/js/Screen/PickingLoadFetcher.js:0
+#, python-format
 msgid "Network Error"
 msgstr "Erreur serveur"
 
@@ -269,7 +272,9 @@ msgstr "Transfert"
 #: code:addons/pos_picking_load/static/src/js/Screen/PickingLoadFetcher.js:0
 #, python-format
 msgid "Unable to fetch orders if offline."
-msgstr "Impossible de charger les bon de livraison si le point de vente est hors ligne"
+msgstr ""
+"Impossible de charger les bon de livraison si le point de vente est hors "
+"ligne"
 
 #. module: pos_picking_load
 #. odoo-javascript
