@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -46,11 +46,6 @@ msgstr ""
 #. module: pos_cash_move_reason
 #: model_terms:ir.ui.view,arch_db:pos_cash_move_reason.view_wizard_pos_move_reason_form
 msgid "Apply"
-msgstr ""
-
-#. module: pos_cash_move_reason
-#: model:ir.model.fields,field_description:pos_cash_move_reason.field_wizard_pos_move_reason__statement_id
-msgid "Bank Statement"
 msgstr ""
 
 #. module: pos_cash_move_reason
@@ -123,6 +118,7 @@ msgid "Income Account"
 msgstr ""
 
 #. module: pos_cash_move_reason
+#. odoo-python
 #: code:addons/pos_cash_move_reason/wizard/wizard_pos_move_reason.py:0
 #, python-format
 msgid "Invalid Amount"
