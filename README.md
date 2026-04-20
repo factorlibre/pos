@@ -26,6 +26,7 @@ addon | version | maintainers | summary
 [pos_auto_invoice](pos_auto_invoice/) | 16.0.1.0.0 |  | Allow to set POS orders as to-invoice by default
 [pos_bypass_global_discount](pos_bypass_global_discount/) | 16.0.1.0.1 |  | POS Bypass Global Discount
 [pos_cash_control_override](pos_cash_control_override/) | 16.0.1.0.0 |  | Override bare PoS user cash control restrictions
+[pos_cash_move_reason](pos_cash_move_reason/) | 16.0.1.0.0 |  | POS cash in-out reason
 [pos_cashback](pos_cashback/) | 16.0.1.0.0 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Point of Sale - Cashback
 [pos_category_complete_name](pos_category_complete_name/) | 16.0.1.0.0 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Adds the complete name field on the pos category field.
 [pos_config_logo](pos_config_logo/) | 16.0.1.0.0 |  | Set logotypes different from the company's one
