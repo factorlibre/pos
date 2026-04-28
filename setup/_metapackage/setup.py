@@ -49,6 +49,7 @@ setuptools.setup(
         'odoo-addon-pos_partner_alternative_pricelist_load_background>=16.0dev,<16.1dev',
         'odoo-addon-pos_partner_birthdate>=16.0dev,<16.1dev',
         'odoo-addon-pos_partner_firstname>=16.0dev,<16.1dev',
+        'odoo-addon-pos_partner_is_company>=16.0dev,<16.1dev',
         'odoo-addon-pos_partner_load_new_data>=16.0dev,<16.1dev',
         'odoo-addon-pos_partner_location_abstract>=16.0dev,<16.1dev',
         'odoo-addon-pos_partner_location_google_map>=16.0dev,<16.1dev',

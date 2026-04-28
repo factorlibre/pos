@@ -5,7 +5,7 @@
 {
     "name": "POS Partner - Is Company",
     "summary": "POS Support of 'Is Company' partner field",
-    "version": "16.0.1.0.0",
+    "version": "16.0.2.0.0",
     "category": "Point Of Sale",
     "website": "https://github.com/OCA/pos",
     "author": "GRAP, Odoo Community Association (OCA)",
