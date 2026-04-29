@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* pos_ticket_extra_company_info
+# 	* pos_ticket_extra_company_info
 #
 msgid ""
 msgstr ""
@@ -17,40 +17,41 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: pos_ticket_extra_company_info
-#. openerp-web
-#: code:addons/pos_ticket_extra_company_info/static/src/xml/pos_ticket_extra_company_info.xml:27
-#: code:addons/pos_ticket_extra_company_info/static/src/xml/pos_ticket_extra_company_info.xml:53
+#: model:ir.model,name:pos_ticket_extra_company_info.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: pos_ticket_extra_company_info
+#. odoo-javascript
+#: code:addons/pos_ticket_extra_company_info/static/src/xml/OrderReceipt.xml:0
 #, python-format
 msgid "Company Registry:"
 msgstr "Registro azienda:"
 
 #. module: pos_ticket_extra_company_info
-#. openerp-web
-#: code:addons/pos_ticket_extra_company_info/static/src/xml/pos_ticket_extra_company_info.xml:33
+#: model:ir.model,name:pos_ticket_extra_company_info.model_pos_session
+msgid "Point of Sale Session"
+msgstr ""
+
+#. module: pos_ticket_extra_company_info
+#: model:ir.model.fields,field_description:pos_ticket_extra_company_info.field_res_company__pos_ticket_address
+msgid "Pos Ticket Address"
+msgstr ""
+
 #, python-format
-msgid "Email:"
-msgstr "E-mail:"
+#~ msgid "Email:"
+#~ msgstr "E-mail:"
 
-#. module: pos_ticket_extra_company_info
-#: model:ir.model,name:pos_ticket_extra_company_info.model_pos_config
-msgid "Point of Sale Configuration"
-msgstr "Configurazione punto vendita"
+#~ msgid "Point of Sale Configuration"
+#~ msgstr "Configurazione punto vendita"
 
-#. module: pos_ticket_extra_company_info
-#: model:ir.model.fields,field_description:pos_ticket_extra_company_info.field_pos_config__ticket_address
-msgid "Ticket Address"
-msgstr "Indirizzo biglietto"
+#~ msgid "Ticket Address"
+#~ msgstr "Indirizzo biglietto"
 
-#. module: pos_ticket_extra_company_info
-#. openerp-web
-#: code:addons/pos_ticket_extra_company_info/static/src/xml/pos_ticket_extra_company_info.xml:24
 #, python-format
-msgid "VAT:"
-msgstr "IVA:"
+#~ msgid "VAT:"
+#~ msgstr "IVA:"
 
-#. module: pos_ticket_extra_company_info
-#. openerp-web
-#: code:addons/pos_ticket_extra_company_info/static/src/xml/pos_ticket_extra_company_info.xml:30
 #, python-format
-msgid "Website:"
-msgstr "Sito web:"
+#~ msgid "Website:"
+#~ msgstr "Sito web:"
