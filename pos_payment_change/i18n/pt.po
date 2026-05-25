@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* pos_payment_change
+# * pos_payment_change
 #
 msgid ""
 msgstr ""
@@ -14,6 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+""
 
 #. module: pos_payment_change
 #. odoo-python
@@ -194,12 +195,8 @@ msgstr "Reembolso e Revenda"
 #. odoo-python
 #: code:addons/pos_payment_change/models/pos_order.py:0
 #, python-format
-msgid ""
-"The payments of the Order %(order)s (Ref: %(ref)s have been changed by "
-"%(user_name)s on %(today)s"
-msgstr ""
-"Os pagamentos da Ordem %(order)s (Ref: %(ref)s foram alterados por "
-"%(user_name)s em %(today)s"
+msgid "The payments of the Order %(order)s (Ref: %(ref)s have been changed by %(user_name)s on %(today)s"
+msgstr "Os pagamentos da Ordem %(order)s (Ref: %(ref)s foram alterados por %(user_name)s em %(today)s"
 
 #. module: pos_payment_change
 #: model:ir.model.fields,field_description:pos_payment_change.field_pos_payment_change_wizard__amount_total
@@ -211,12 +208,8 @@ msgstr "Total"
 #. odoo-python
 #: code:addons/pos_payment_change/models/pos_config.py:0
 #, python-format
-msgid ""
-"Unable to use the 'Update Payments' options for companies that have "
-"unalterable accounting."
-msgstr ""
-"Não é possível utilizar a opção 'Atualizar Pagamentos' para empresas com "
-"contabilidade inalterável."
+msgid "Unable to use the 'Update Payments' options for companies that have unalterable accounting."
+msgstr "Não é possível utilizar a opção 'Atualizar Pagamentos' para empresas com contabilidade inalterável."
 
 #. module: pos_payment_change
 #: model:ir.model.fields.selection,name:pos_payment_change.selection__pos_config__payment_change_policy__update
@@ -239,9 +232,5 @@ msgstr "Assistente"
 #. odoo-python
 #: code:addons/pos_payment_change/models/pos_order.py:0
 #, python-format
-msgid ""
-"You can not change payments of the POS '%(name)s' because the associated "
-"session '%(session)s' has been closed!"
-msgstr ""
-"Não é possível alterar os pagamentos do TPV '%(name)s' porque a sessão "
-"associada '%(session)s' foi fechada!"
+msgid "You can not change payments of the POS '%(name)s' because the associated session '%(session)s' has been closed!"
+msgstr "Não é possível alterar os pagamentos do TPV '%(name)s' porque a sessão associada '%(session)s' foi fechada!"
