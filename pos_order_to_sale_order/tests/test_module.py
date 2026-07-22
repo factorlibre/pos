@@ -69,3 +69,39 @@ class TestUi(TestPointOfSaleHttpCommon):
             order.commitment_date.strftime("%Y-%m-%d %H:%M:%S"),
             "2024-01-01 16:00:00",
         )
+
+    def test_create_order_button_disabled(self):
+        # V2/V3/V4/V5: the button stays visible but disabled while a customer or
+        # a line is missing, and becomes enabled reactively once both are set.
+        self.main_pos_config.open_ui()
+
+        # Make the test compatible with pos_minimize_menu
+        if "iface_important_buttons" in self.main_pos_config._fields:
+            self.main_pos_config.iface_important_buttons = "CreateOrderButton"
+
+        self.start_tour(
+            f"/pos/ui?config_id={self.main_pos_config.id}",
+            "PosOrderToSaleOrderDisabledTour",
+            login="accountman",
+        )
+
+    def test_create_order_button_hidden(self):
+        # V1: when every sale-order-creation flag is off, iface_create_sale_order
+        # is False and the button is not rendered at all.
+        self.main_pos_config.write(
+            {
+                "iface_create_draft_sale_order": False,
+                "iface_create_confirmed_sale_order": False,
+                "iface_create_delivered_sale_order": False,
+                "iface_create_invoiced_sale_order": False,
+            }
+        )
+        self.assertFalse(self.main_pos_config.iface_create_sale_order)
+
+        self.main_pos_config.open_ui()
+
+        self.start_tour(
+            f"/pos/ui?config_id={self.main_pos_config.id}",
+            "PosOrderToSaleOrderHiddenTour",
+            login="accountman",
+        )

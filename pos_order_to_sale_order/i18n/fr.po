@@ -17,6 +17,20 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: pos_order_to_sale_order
+#. odoo-javascript
+#: code:addons/pos_order_to_sale_order/static/src/js/CreateOrderButton.js:0
+#, python-format
+msgid "Add a customer to create the sale order."
+msgstr "Ajoutez un client pour créer la commande de vente."
+
+#. module: pos_order_to_sale_order
+#. odoo-javascript
+#: code:addons/pos_order_to_sale_order/static/src/js/CreateOrderButton.js:0
+#, python-format
+msgid "Add at least one line to create the sale order."
+msgstr "Ajoutez au moins une ligne pour créer la commande de vente."
+
+#. module: pos_order_to_sale_order
 #: model:ir.model.fields,field_description:pos_order_to_sale_order.field_pos_config__iface_sale_order_allow_commitment_date
 #: model:ir.model.fields,field_description:pos_order_to_sale_order.field_res_config_settings__iface_sale_order_allow_commitment_date
 msgid "Allow Add Commitment Date"
