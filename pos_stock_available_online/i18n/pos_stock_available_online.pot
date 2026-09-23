@@ -119,3 +119,10 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:pos_stock_available_online.res_config_settings_view_form
 msgid "warehouse"
 msgstr ""
+
+#. module: pos_stock_available_online
+#. odoo-python
+#: code:addons/pos_stock_available_online/models/stock_notifier_pos_mixin.py:0
+#, python-format
+msgid "Updating stock of %s products on the POS"
+msgstr ""
