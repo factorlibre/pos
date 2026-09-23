@@ -10,9 +10,9 @@ class StockMove(models.Model):
         res = super().write(vals)
         if not states_dict:
             return res
-        for line in self:
-            if states_dict.get(line.id) != line.state:
-                line.sudo()._notify_pos()
+        changed = self.filtered(lambda line: states_dict.get(line.id) != line.state)
+        if changed:
+            changed.sudo()._notify_pos()
         return res
 
     def _action_done(self, cancel_backorder=False):
