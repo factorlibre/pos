@@ -132,3 +132,10 @@ msgstr "almacén"
 msgid ""
 "Updating stock of product %s in warehouse %s on the POS"
 msgstr "Actualización en los TPVs del stock del producto %s en el almacén %s ."
+
+#. module: pos_stock_available_online
+#. odoo-python
+#: code:addons/pos_stock_available_online/models/stock_notifier_pos_mixin.py:0
+#, python-format
+msgid "Updating stock of %s products on the POS"
+msgstr "Actualización en los TPVs del stock de %s productos"
