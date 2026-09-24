@@ -13,6 +13,7 @@ const PosOrderline = (OriginalOrderline) =>
             ev.stopPropagation();
             ev.preventDefault();
             this.selectLine();
+            this.env.pos.numpadMode = "quantity";
             this.trigger("update-selected-orderline", {buffer: null, key: "Backspace"});
         }
     };

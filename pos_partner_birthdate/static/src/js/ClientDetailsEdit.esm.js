@@ -12,6 +12,12 @@ const PartnerDetailsEditBirthdate = (OriginalPartnerDetailsEdit) =>
                 birthdate_date: this.props.partner.birthdate_date || null,
             });
         }
+        async saveChanges() {
+            if (!this.changes.birthdate_date) {
+                this.changes.birthdate_date = false;
+            }
+            return await super.saveChanges(...arguments);
+        }
     };
 
 Registries.Component.extend(PartnerDetailsEdit, PartnerDetailsEditBirthdate);

@@ -1,6 +1,6 @@
 {
     "name": "Point of Sale Re-order",
-    "version": "16.0.0.1.2",
+    "version": "16.0.0.1.3",
     "category": "Sales/Point of Sale",
     "summary": "Simple Re-order in the Point of Sale ",
     "depends": ["point_of_sale"],

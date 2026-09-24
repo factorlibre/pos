@@ -9,7 +9,7 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "depends": ["pos_daily_sales_reports"],
     "data": [
         "views/res_config_settings.xml",

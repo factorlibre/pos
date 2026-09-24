@@ -5,10 +5,10 @@
     License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 */
 
+import {getSteps, startSteps} from "point_of_sale.tour.utils";
 import {PosOrderToSaleOrder} from "./helpers/PosOrderToSaleOrderMethods.esm";
 import {ProductScreen} from "point_of_sale.tour.ProductScreenTourMethods";
 import {TextAreaPopup} from "point_of_sale.tour.TextAreaPopupTourMethods";
-import {getSteps, startSteps} from "point_of_sale.tour.utils";
 import Tour from "web_tour.tour";
 
 startSteps();
@@ -28,6 +28,7 @@ ProductScreen.do.clickPartnerButton();
 ProductScreen.do.clickCustomer("Addison Olson");
 
 PosOrderToSaleOrder.do.clickCreateOrderButton();
+PosOrderToSaleOrder.do.addCommitmentDate();
 PosOrderToSaleOrder.do.clickCreateInvoicedOrderButton();
 
 ProductScreen.check.isShown();

@@ -1,7 +1,7 @@
 /** @odoo-module **/
+import {getSteps, startSteps} from "point_of_sale.tour.utils";
 import {PosLoyalty} from "pos_loyalty.tour.PosCouponTourMethods";
 import {ProductScreen} from "point_of_sale.tour.ProductScreenTourMethods";
-import {getSteps, startSteps} from "point_of_sale.tour.utils";
 import Tour from "web_tour.tour";
 
 startSteps();

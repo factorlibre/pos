@@ -3,7 +3,7 @@
 
 {
     "name": "POS Partner Location Abstract",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "category": "Point Of Sale",
     "summary": "POS Partner Location Abstract",
     "author": "Cetmix, Odoo Community Association (OCA)",

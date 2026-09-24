@@ -5,7 +5,7 @@
 {
     "name": "Point of Sale - Membership",
     "summary": "Implement features of membership module in the Point of sale UI.",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "category": "Point of Sale",
     "maintainers": ["legalsylvain"],
     "author": "GRAP,Odoo Community Association (OCA)",

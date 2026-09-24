@@ -47,6 +47,13 @@ class PosConfig(models.Model):
         " Only invoice payment process will be possible.",
     )
 
+    iface_sale_order_allow_commitment_date = fields.Boolean(
+        string="Allow Add Commitment Date",
+        default=True,
+        help="If checked, the cashier will have the possibility to add"
+        " a commitment date on the sale order.",
+    )
+
     @api.depends(
         "iface_create_draft_sale_order",
         "iface_create_confirmed_sale_order",

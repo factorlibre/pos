@@ -8,7 +8,7 @@
     "website": "https://github.com/OCA/pos",
     "category": "Point of Sale",
     "maintainers": ["robyf70"],
-    "version": "16.0.1.2.1",
+    "version": "16.0.1.2.2",
     "license": "LGPL-3",
     "depends": ["point_of_sale"],
     "assets": {

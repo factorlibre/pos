@@ -9,9 +9,10 @@ from odoo.addons.point_of_sale.tests.common import TestPoSCommon
 
 @odoo.tests.tagged("post_install", "-at_install")
 class TestDailySalesReport(TestPoSCommon):
-    def setUp(self):
-        super().setUp()
-        self.config = self.basic_config
+    @classmethod
+    def setUpClass(cls, chart_template_ref=None):
+        super().setUpClass(chart_template_ref=chart_template_ref)
+        cls.config = cls.basic_config
 
     def test_get_sale_details(self):
         today = fields.Date.today()

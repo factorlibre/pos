@@ -45,11 +45,40 @@ msgid "Pay invoice"
 msgstr ""
 
 #. module: pos_session_pay_invoice
+#: model:ir.model.fields,field_description:pos_session_pay_invoice.field_cash_pay_invoice__pos_payment_method_id
+msgid "Payment Method"
+msgstr ""
+
+#. module: pos_session_pay_invoice
+#: model:ir.model,name:pos_session_pay_invoice.model_pos_order
+msgid "Point of Sale Orders"
+msgstr ""
+
+#. module: pos_session_pay_invoice
 #: model:ir.model,name:pos_session_pay_invoice.model_pos_session
 msgid "Point of Sale Session"
 msgstr ""
 
 #. module: pos_session_pay_invoice
+#: model:ir.model.fields,field_description:pos_session_pay_invoice.field_cash_pay_invoice__pos_payment_method_domain
+msgid "Pos Payment Method Domain"
+msgstr ""
+
+#. module: pos_session_pay_invoice
+#: model:ir.model.fields,field_description:pos_session_pay_invoice.field_cash_pay_invoice__pos_session_id
+msgid "Pos Session"
+msgstr ""
+
+#. module: pos_session_pay_invoice
 #: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice.view_pos_config_kanban
 msgid "Summary"
+msgstr ""
+
+#. module: pos_session_pay_invoice
+#. odoo-python
+#: code:addons/pos_session_pay_invoice/models/pos_session.py:0
+#, python-format
+msgid ""
+"You can only pay invoices in an opened session. Please refresh the window "
+"and try again."
 msgstr ""

@@ -7,7 +7,7 @@ odoo.define("pos_product_packaging_container_deposit.models", function (require)
             _getDepositQty(qty, packaging_qty) {
                 if (!packaging_qty || this.pos.isProductQtyZero(packaging_qty))
                     return 0;
-                return this.pos.formatProductQty(parseInt(qty / packaging_qty));
+                return this.pos.formatProductQty(parseInt(qty / packaging_qty, 10));
             }
         };
     Registries.Model.extend(Order, DepositOrder);

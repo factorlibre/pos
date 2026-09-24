@@ -120,16 +120,10 @@ msgstr "Quantità"
 msgid "Quantity to Print"
 msgstr "Quantità da stampare"
 
-#. module: pos_product_label
-#. odoo-javascript
-#: code:addons/pos_product_label/static/src/PrintLabelPopup.xml:0
 #, python-format
-msgid "custom"
-msgstr "personalizzato"
+#~ msgid "custom"
+#~ msgstr "personalizzato"
 
-#. module: pos_product_label
-#. odoo-javascript
-#: code:addons/pos_product_label/static/src/PrintLabelPopup.xml:0
 #, python-format
-msgid "order"
-msgstr "ordine"
+#~ msgid "order"
+#~ msgstr "ordine"

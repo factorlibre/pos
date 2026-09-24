@@ -4,7 +4,7 @@
         inherit_id="pos_daily_sales_reports.pos_daily_report"
     >
         <xpath
-            expr="//t[@id='sales']/table[@class='table table-sm']"
+            expr="//t[@id='sales']/table[hasclass('table', 'table-sm')]"
             position="attributes"
         >
             <attribute name="style">display:none;</attribute>

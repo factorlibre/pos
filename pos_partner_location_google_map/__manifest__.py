@@ -3,7 +3,7 @@
 
 {
     "name": "POS Partner Location Google Map",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "category": "Point Of Sale",
     "summary": "POS Partner Location Google Map",
     "author": "Cetmix, Odoo Community Association (OCA)",

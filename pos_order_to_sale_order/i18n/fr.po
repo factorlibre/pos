@@ -17,6 +17,19 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: pos_order_to_sale_order
+#: model:ir.model.fields,field_description:pos_order_to_sale_order.field_pos_config__iface_sale_order_allow_commitment_date
+#: model:ir.model.fields,field_description:pos_order_to_sale_order.field_res_config_settings__iface_sale_order_allow_commitment_date
+msgid "Allow Add Commitment Date"
+msgstr ""
+
+#. module: pos_order_to_sale_order
+#. odoo-javascript
+#: code:addons/pos_order_to_sale_order/static/src/xml/CreateOrderPopup.xml:0
+#, python-format
+msgid "Commitment Date"
+msgstr ""
+
+#. module: pos_order_to_sale_order
 #: model:ir.model,name:pos_order_to_sale_order.model_res_config_settings
 msgid "Config Settings"
 msgstr "Paramètres de config"
@@ -92,6 +105,14 @@ msgstr "Créer des ventes"
 #, python-format
 msgid "Discard"
 msgstr "Annuler"
+
+#. module: pos_order_to_sale_order
+#: model:ir.model.fields,help:pos_order_to_sale_order.field_pos_config__iface_sale_order_allow_commitment_date
+#: model:ir.model.fields,help:pos_order_to_sale_order.field_res_config_settings__iface_sale_order_allow_commitment_date
+msgid ""
+"If checked, the cashier will have the possibility to add a commitment date "
+"on the sale order."
+msgstr ""
 
 #. module: pos_order_to_sale_order
 #: model:ir.model.fields,help:pos_order_to_sale_order.field_pos_config__iface_create_confirmed_sale_order

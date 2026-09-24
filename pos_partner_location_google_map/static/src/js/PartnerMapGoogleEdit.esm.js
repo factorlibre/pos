@@ -1,9 +1,10 @@
 /** @odoo-module **/
+/* global google */
 
+import {onMounted, onWillStart} from "@odoo/owl";
 import PartnerMapEdit from "pos_partner_location_abstract.PartnerMapEdit";
 import Registries from "point_of_sale.Registries";
 import {loadJS} from "@web/core/assets";
-import {onMounted, onWillStart} from "@odoo/owl";
 
 /* eslint no-undef: "warn"*/
 const PartnerMapGoogleEdit = (PartnerMapEdit) =>

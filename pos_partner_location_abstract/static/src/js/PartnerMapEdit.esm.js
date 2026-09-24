@@ -18,6 +18,7 @@ class PartnerMapEdit extends AbstractAwaitablePopup {
         this.onHandleMap();
     }
 
+    // eslint-disable-next-line no-empty-function
     onHandleMap() {}
 
     async getPayload() {
@@ -33,8 +34,7 @@ class PartnerMapEdit extends AbstractAwaitablePopup {
         this.lng = lng;
     }
 
-    /* eslint no-empty-function: "warn"*/
-    /* eslint no-unused-vars: "warn"*/
+    // eslint-disable-next-line no-unused-vars,no-empty-function
     setAddressByLocation(addres) {}
 
     inputChange(event) {

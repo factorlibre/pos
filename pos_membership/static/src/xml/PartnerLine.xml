@@ -12,7 +12,7 @@
         t-inherit-mode="extension"
         owl="1"
     >
-        <xpath expr="//button[@class='edit-partner-button']" position="after">
+        <xpath expr="//button[hasclass('edit-partner-button')]" position="after">
             <span
                 t-if="props.partner.membership_state != 'none'"
                 class="membership-state-tag"

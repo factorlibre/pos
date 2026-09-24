@@ -2,6 +2,8 @@
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from dateutil import parser as dateutil_parser
+
 from odoo import Command, _, api, models
 
 
@@ -17,6 +19,11 @@ class SaleOrder(models.Model):
             Command.create(SaleOrderLine._prepare_from_pos(sequence, line_data[2]))
             for sequence, line_data in enumerate(order_data["lines"], start=1)
         ]
+        commitment_date = order_data.get("commitment_date", False)
+        if commitment_date:
+            commitment_date = dateutil_parser.parse(commitment_date).replace(
+                tzinfo=None
+            )
         return {
             "partner_id": order_data["partner_id"],
             "origin": _("Point of Sale %s") % (session.name),
@@ -24,7 +31,9 @@ class SaleOrder(models.Model):
             "user_id": order_data["user_id"],
             "pricelist_id": order_data["pricelist_id"],
             "fiscal_position_id": order_data["fiscal_position_id"],
+            "commitment_date": commitment_date,
             "order_line": order_lines,
+            "warehouse_id": session.config_id.picking_type_id.warehouse_id.id,
         }
 
     @api.model
@@ -34,6 +43,7 @@ class SaleOrder(models.Model):
         sale_order = self.with_context(
             pos_order_lines_data=[x[2] for x in order_data.get("lines", [])]
         ).create(order_vals)
+        sale_order._recompute_taxes()
 
         # Confirm Sale Order
         if action in ["confirmed", "delivered", "invoiced"]:

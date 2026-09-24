@@ -10,11 +10,11 @@ odoo.define("pos_access_right.TicketScreen", function (require) {
                 return this.env.pos.user.hasGroupMultiOrder;
             }
 
-            async deleteOrder(order) {
-                if (this.env.pos.user.hasGroupDeleteOrder) {
-                    return super.deleteOrder(order);
+            async _onDeleteOrder({detail: order}) {
+                if (!this.env.pos.user.hasGroupDeleteOrder) {
+                    return;
                 }
-                return false;
+                return super._onDeleteOrder({detail: order});
             }
         };
 
